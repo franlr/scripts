@@ -10,3 +10,15 @@
 
 yum -y update
 yum -y install activemq mcollective mcollective-client mcollective-facter-facts mcollective-puppet-agent mcollective-puppet-client
+
+# edit /etc/mcollective/server.cfg
+
+chkconfig activemq on
+service activemq start
+
+chkconfig mcollective on
+service mcollective start
+
+# add to /etc/sysconfig/iptables: 
+# -A INPUT -p tcp -m tcp --dport 61613 -j ACCEPT
+# service iptables restart
