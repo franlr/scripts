@@ -18,3 +18,4 @@ apt-get install -y ruby-stomp=1.2.10-1puppetlabs1
 
 apt-get install -y mcollective=2.5.1-1puppetlabs1
 
+service mcollective start
