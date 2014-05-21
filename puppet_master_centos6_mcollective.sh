@@ -9,7 +9,8 @@
 # https://github.com/gutocarvalho/puppet-mcollective-debian
 
 yum -y update
-yum -y install activemq mcollective mcollective-client mcollective-facter-facts mcollective-puppet-agent mcollective-puppet-client
+yum -y install activemq mcollective mcollective-client mcollective-facter-facts \
+mcollective-puppet-agent mcollective-puppet-client mcollective-service-agent
 
 # edit /etc/mcollective/server.cfg
 
