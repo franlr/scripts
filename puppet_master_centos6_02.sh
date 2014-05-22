@@ -32,6 +32,8 @@ export FQDN=`hostname -f`
 export PUPPETVERSION=`facter puppetversion`
 export HOSTNAME=`/usr/bin/facter hostname`
 export PASSENGER_VERSION="4.0.41"
+export RACK_VERSION="1.5.2"
+export RAKE_VERSION="10.3.1"
 IP=`/usr/bin/facter ipaddress`
 TIMESERVER="hora.rediris.es"
 TEMP_DIR=${TEMP:-/tmp}
@@ -261,7 +263,8 @@ echo "$IP $FQND $HOSTNAME" >> /etc/hosts
 # APACHE & PASSENGER ###################################################################
 
 yum install -y httpd httpd-devel mod_ssl ruby-rdoc ruby-devel rubygems
-/usr/bin/gem install --no-rdoc --no-ri rack
+/usr/bin/gem install --no-rdoc --no-ri rack --version $RACK_VERSION
+/usr/bin/gem install --no-rdoc --no-ri rake --version $RAKE_VERSION
 /usr/bin/gem install --no-rdoc --no-ri passenger --version $PASSENGER_VERSION
 
 passenger-install-apache2-module --auto
