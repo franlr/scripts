@@ -47,10 +47,10 @@ apt-get install -y augeas-tools
 # Equivalente a realizar: puppet resource service puppet ensure=stopped enable=false
 
 # Se queremos inicialo e ademais que este arrincado no inicio da maquina:
-service puppet start
+#service puppet start
 
 # De: https://github.com/panticz/installit/blob/master/install.puppet-client.sh
-[ -f /etc/default/puppet ] && sed -i 's|START=no|START=yes|g' /etc/default/puppet
+#[ -f /etc/default/puppet ] && sed -i 's|START=no|START=yes|g' /etc/default/puppet
 
 # E equivalente a realizar: puppet resource service puppet ensure=running enable=true
 
